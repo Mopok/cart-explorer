@@ -1,0 +1,85 @@
+
+/*Button*/
+	.button {
+	    background-color: rgb(255, 204, 102);
+	    color: rgb(128, 223, 255)
+	}
+
+	.button:after {
+	    background: rgb(26, 178, 255);
+	}
+
+
+
+
+
+
+	body {
+		background: rgb(84, 148, 55);
+	}
+	#login-buttons .login-button:hover, .accounts-dialog .login-button:hover {
+	background: rgb(204, 102, 0);
+	}
+	#login-buttons .login-button, .accounts-dialog .login-button {
+		background: rgb(204, 102, 0);
+	}
+
+/*Upgrades*/
+	.upgrades-div {
+		background: rgb(255, 204, 102);
+	}
+	.upgrade-button {
+		background-color: rgb(204, 102, 0);
+	}
+	table.upgrades-table tr:nth-child(even) {
+		background-color: rgb(255, 229, 179);
+	}
+	.menu-header {
+		background-color: #E9967A;
+	}
+	input[type=radio]:checked + label:before {
+		background: gold;
+	}
+
+/*Assignments*/
+	.assignment-div {
+		background: rgb(255, 204, 102);
+	}
+	table.assignment-table tr:nth-child(even) {
+		background-color: rgb(255, 229, 179);
+	}
+	.stats-button {
+		color: black;
+		background: rgb(191, 128, 64);
+
+	}
+
+/*Animal Stats*/
+	.animal-stats-container {
+		background: rgb(255, 204, 102);
+	}
+	table.animal-stats-table tr:nth-child(even) {
+		background-color: rgb(255, 229, 179);
+	}
+	.animal-title {
+		background-color: #E9967A;
+	}
+
+/*Strength Menu*/
+	.strength-div {
+		background: rgb(255, 204, 102);
+	}
+	.pressed-workout-button {
+		background: rgb(255, 0, 102);
+	}
+
+/*Enhance Menu*/
+	.enhance-div {
+		background: rgb(255, 204, 102);
+	}
+
+/*Theme Menu*/
+	.themes-div {
+		background: rgb(255, 204, 102);
+	}
+

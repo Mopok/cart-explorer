@@ -1,0 +1,79 @@
+<template name="assignments">
+	<div class="assignment-div">
+		<!-- <header class="assignment-header">
+			Assignments <br>Velocity: {{velocity}} <br>Craft Speed: {{craftSpeed}}
+		</header> -->
+		<p class="menu-header">Velocity: {{velocity}} <span class="align-right">CraftSpeed: {{craftSpeed}}</span></p>
+		<p class="header-note"> *Press an animal for extra stats*</p>
+		<p class="menu-header">
+			<span>
+			Increment By: 
+			<input type="radio" class="radio radio-one" name="2" checked="{{isOne}}" id="r1">
+			<label for="r1">1</label>
+			<input type="radio" class="radio radio-ten" name="2" checked="{{isTen}}" id="r2">
+			<label for="r2">10</label>
+			<input type="radio" class="radio radio-hundred" name="2" checked="{{isHundred}}" id="r3">
+			<label for="r3">100</label>
+			<input type="radio" class="radio radio-thousand" name="2" checked="{{isThousand}}" id="r4">
+			<label for="r4">1000</label>
+			</span>
+		</p>
+		<div class="assignment-table-container">
+		<table class="assignment-table">
+			<tr class="assignment-table-title">
+				<th class="animal-col">Animal</th>
+				<th colspan="3">Pushing</th>
+				<th colspan="3">Crafting</th>
+				<th>Mingling</th>
+			</tr>
+			{{#each animals}}
+				{{#if unlocked this}}
+				<tr class="assignment-table-row">
+					<td><button class="button stats-button">{{this.animalType}}</button></td>
+					<td class="assign-btn-spacing"><button class="push-dec-button button assign-button">-</button></td>
+					<td class="assign-tb-spacing"><span>{{amtPushing}}</span></td>
+					<td class="assign-btn-spacing"><button class="push-inc-button button assign-button">+</button></td>
+					<td class="assign-btn-spacing"><button class="craft-dec-button button assign-button">-</button></td>
+					<td class="assign-tb-spacing"><span>{{amtCrafting}}</span></td>
+					<td class="assign-btn-spacing"><button class="craft-inc-button button assign-button">+</button></td>
+					<td><span>{{mingling(this)}}</span></td>
+				</tr>
+				{{/if}}
+			{{/each}}
+		</table> 
+		</div>
+		{{#if animalStats}}
+	  		{{> animalstats }}
+		{{/if}}
+
+
+	</div>
+</template>
+
+<template name="animalstats">
+	<div class="animal-stats-container">
+		<p class="animal-title">{{animal}} <button class="button exit-stats">&times;</button></p>
+		<div class="animal-stats-table-container">
+		<table class="animal-stats-table">
+			<tr>
+				<td>Velocity: {{velocity}} m/s</td>
+				<td class="percent-cell">{{velocityPercent}}%</td>
+				<!-- this is passing null to helpers -->
+			</tr><!-- TODO -->
+			<tr>
+				<td colspan="2">Crafting: {{craftSpeed}} nets/s <span class="float-right">{{craftPercent}}%</span></td>
+			</tr>
+			<tr>
+				<td>Mingling: {{mingling}}</td>
+			</tr>
+			<tr>
+				<td colspan="2">Breeding Rate: <span class="float-right">{{breedingRate}} {{animal}}/s</span></td>
+			</tr>
+			<tr>
+				<td>One {{animal}}:</td>
+				<td class="percent-cell">{{speedInc}}m/s</td>
+			</tr>
+		</table>
+		</div>
+	</div>
+</template>

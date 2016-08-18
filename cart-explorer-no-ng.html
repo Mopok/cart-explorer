@@ -1,0 +1,120 @@
+
+<head>
+  <title>cart-explorer-no-ng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=0"/>
+  
+</head>
+
+<body>
+  	<div class="container">
+	  	<header class="title">
+	  		{{> loginButtons align="right"}}
+	  		<span class="title-text">{{headerTxt}}</span>
+	  	</header>
+	  	{{#if started}}
+	  		{{> gameBox}}
+	  	{{else}}
+	  		{{> startScreen}}
+	  	{{/if}}
+
+  	</div>
+</body>
+
+<template name="gameBox">
+<div class="game-box">
+<head>
+<link rel="stylesheet" href="{{selectedStyle}}" type="text/css"/>
+</head>
+
+	<table class="game-table">
+	<tr>
+		<td colspan="2"><button class="theme-button button {{#if themeMenu}} open-button {{/if}}">{{themeBtnTxt}}</button></td>
+
+	</tr>
+	<tr class="push-container">
+		<td>
+			<div class="distance-text">{{meters}}</div>
+		</td>
+		<td>
+			<div class="sub-container-text">Meters</div>
+		</td>
+	</tr>
+	<tr class="distance-sub-container">
+		<td colspan="2"><button class="meter-button button">Push Cart</button></td>
+	</tr>
+	
+
+	<tr class="craft-container">
+		<td><div class="net-text">{{nets}}</div></td>
+		<td><div class="sub-container-text">Nets</div></td>
+	</tr>
+	<tr class="craft-sub-container">
+		<td colspan="2"><button class="craft-button button">Craft Net</button></td>
+	</tr>
+	<tr>
+		<td colspan="2"><div class="sub-container-vel">{{velocity}} m/s</div></td>
+	</tr>
+	<tr>
+		<td colspan="2"><div class="sub-container-net">{{craftSpeed}} nets/s</div></td>
+	</tr>
+	
+
+	</table>
+		<!-- <button class="meter-button button">Push Cart</button>
+	  	<p class="meters-text">Distance Travelled: {{meters}}m.</p>
+	  	<button class="net-button button">Craft Nets</button>
+	  	<p class="nets-text">You have {{nets}} nets.</p>
+	  	<button class="strength-button button">Workout</button>
+	  	<p class="strength-text">You push {{strength}} meters each time.</p> -->
+	<div class="bot-buttons-container">
+	<table class="bot-buttons">
+	<tr>
+		<td class="button-container">
+			<button class="button enhance-menu-button {{#if enhanceMenu}} open-button {{/if}}">{{enhanceBtnTxt}}</button>
+		</td>
+		<td class="button-container">
+			<button class="button strength-menu-button {{#if strengthMenu}} open-button {{/if}}">{{strengthBtnTxt}}</button>
+		</td>
+	</tr>
+	<tr>
+		<td class="button-container">
+			<button class="button upgrade-menu-button {{#if upgradeMenu}} open-button {{/if}}">{{upgradeBtnTxt}}</button>
+		</td>
+		<td class="button-container">
+			<button class="button assignment-menu-button {{#if assignmentMenu}} open-button {{/if}}">{{assignBtnTxt}}</button>
+		</td>
+	</tr>
+	</table>
+	</div>
+	
+
+	{{#if upgradeMenu}}
+	  	{{> upgrades}}
+	{{/if}}
+	{{#if assignmentMenu}}
+	  	{{> assignments}}
+	{{/if}}
+	{{#if strengthMenu}}
+		{{> strengthen}}
+	{{/if}}
+  	{{#if enhanceMenu}}
+		{{> enhance}}
+	{{/if}}
+	{{#if themeMenu}}
+		{{> themes}}
+	{{/if}}
+</div>
+</template>
+
+
+
+
+<template name="startScreen">
+<div class="start-screen">
+  	<button class="start-button button">Start</button>
+  	<div class="login-warning">
+		Must be logged in to start
+	</div>
+</div>
+</template>
+

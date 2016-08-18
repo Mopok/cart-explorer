@@ -1,0 +1,38 @@
+	
+<template name="upgrades">
+	<div class="upgrades-div">
+			<p class="menu-header">Nets: {{nets}}</p>
+			<p class="menu-header">
+			<span>
+			Auto Assign: 
+			<input type="radio" class="radio radio-push" name="1" checked="{{isPush}}" id="r1">
+			<label for="r1">Push</label>
+			<input type="radio" class="radio radio-craft" name="1" checked="{{isCraft}}" id="r2">
+			<label for="r2">Craft</label>
+			<input type="radio" class="radio radio-mingle" name="1" checked="{{isMingle}}" id="r3">
+			<label for="r3">Mingle</label>
+			</span>
+			</p>
+			<div class="upgrades-table-container">
+			<table class="upgrades-table">
+					<tr class="upgrade-table-title">
+						<th>Nets Needed</th>
+						<th>Animal</th>
+						<th># of Animals</th>
+						<th>Biome</th>
+					</tr>
+					{{#each animals}}
+						{{#if unlocked this}}
+						<tr class="upgrade-table-row">
+						<td><button class="upgrade-button button">{{netsNeeded(this)}}</button></td>
+						<td>{{this.animalType}}</td>
+						<td>{{amountOfAnimals(this)}}</td>
+						<td>{{biome(this)}}</td>
+					</tr>
+					{{/if}}
+					{{/each}}
+			</table>
+			<p class="header-note">The further you travel the more animals you unlock!</p>
+			</div>
+  		</div>
+</template>

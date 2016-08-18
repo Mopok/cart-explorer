@@ -1,0 +1,18 @@
+
+<template name="strengthen">
+	<div class="strength-div">
+	<div class="strength-div-wrapper">
+			<p class="menu-header">Strength: {{strengthAmt}}</p>
+			<progress value="{{currTime}}" max="{{endTime}}"></progress>
+			<button class="workout-button button {{#if pressed}} pressed-workout-button {{/if}}">{{#if pressed}} In Progress {{else}} Workout {{/if}}</button>
+			{{#if pressed}}
+				<p class="strength-text">Time left: {{timeLeft}}.</p>
+				<p class="strength-text">Strength when done: {{strengthWhenDone}}.</p>
+			{{else}}
+				<p class="strength-text">Length of next workout: {{nextTime}}.</p>
+				<p class="strength-text">Strength when done: {{nextStrengthInc}}.</p>
+			{{/if}}
+
+  	</div>
+  	</div>
+</template>
